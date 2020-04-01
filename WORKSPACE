@@ -2,6 +2,15 @@ workspace(name = "org_tensorflow")
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
+# required by pkg @com_github_google_benchmark in /home/aliwang/tensorflow/tensorflow/lite/tools/make/downloads/absl/absl/time/internal/cctz/BUILD.bazel
+http_archive(
+    name = "com_github_google_benchmark",
+    sha256 = "3c6a165b6ecc948967a1ead710d4a181d7b0fbcaa183ef7ea84604994966221a",
+    strip_prefix = "benchmark-1.5.0",
+    urls = ["https://github.com/google/benchmark/archive/v1.5.0.tar.gz"],
+)
+
+
 http_archive(
     name = "io_bazel_rules_closure",
     sha256 = "5b00383d08dd71f28503736db0500b6fb4dda47489ff5fc6bed42557c07c6ba9",

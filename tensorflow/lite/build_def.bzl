@@ -166,6 +166,7 @@ def tflite_cc_shared_object(
         visibility = visibility,
         tags = tags,
         per_os_targets = per_os_targets,
+        features = ["windows_export_all_symbols"],
     )
 
 def tf_to_tflite(name, src, options, out):
