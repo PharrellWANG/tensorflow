@@ -146,6 +146,7 @@ def tflite_cc_shared_object(
     tf_cc_shared_object(
         name = name,
         copts = copts,
+        features = ["windows_export_all_symbols"],
         linkstatic = linkstatic,
         linkopts = linkopts + tflite_jni_linkopts(),
         framework_so = [],
